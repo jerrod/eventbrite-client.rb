@@ -11,8 +11,8 @@ begin
     gem.homepage = "http://github.com/ryanjarvinen/eventbrite-client.rb"
     gem.authors = ["Ryan Jarvinen"]
     gem.add_development_dependency "rspec", "~> 1.3.0"
-    gem.add_dependency "httparty", "~> 0.8.0"
-    gem.add_dependency "tzinfo", "~> 0.3.22"
+    gem.add_dependency "httparty", "~> 0.13.1"
+    gem.add_dependency "tzinfo", "~> 1.1.0"
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
@@ -37,8 +37,8 @@ task :spec => :check_dependencies
 
 task :default => :irb
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
